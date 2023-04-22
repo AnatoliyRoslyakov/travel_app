@@ -4,3 +4,7 @@
 
 ***Prompt:*** *generate stylish minimalistic art of "CityName" with multiple layers getting progressively darker, depicting cityscape, architecture, greenery, and sky, using a single color palette to create depth and perspective, 1 color, 2d, minimalistic*
 
+
+
+##Добавлен таббар
+

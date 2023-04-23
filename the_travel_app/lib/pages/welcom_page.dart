@@ -42,7 +42,7 @@ class _WelcomPageState extends State<WelcomPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          AppLargeText(text: 'Путешествие'),
+                          AppLargeText(text: 'Откройте для себя'),
                           AppText(text: textApp[index], size: 30),
                           SizedBox(
                             height: 20,

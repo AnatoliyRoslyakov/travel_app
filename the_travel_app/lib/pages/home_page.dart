@@ -4,7 +4,7 @@ import 'package:the_travel_app/misc/colors.dart';
 import 'package:the_travel_app/widgets/app_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-import '../../widgets/app_large_text.dart';
+import '../widgets/app_large_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

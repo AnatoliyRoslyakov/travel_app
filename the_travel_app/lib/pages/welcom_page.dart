@@ -14,7 +14,7 @@ class WelcomPage extends StatefulWidget {
 
 class _WelcomPageState extends State<WelcomPage> {
   List images = ['11.png', '22.png', '33.png'];
-  List textApp = ['Камчатский край', 'Санкт-Петербург', 'Москва'];
+  List textApp = ['Камчатский край', 'Санкт-Петербург', 'Москву'];
   List text = [
     'Большое количество достопримечательностей. Потрясающая рыбалка и возможность ложками есть красную икру. По-настоящему экстремальный отдых зимой и летом.',
     'В Петербурге сама атмосфера располагает к творчеству, а так же есть очень много студий и школ,где можно развиваться в любом творческом направлении.',
@@ -42,7 +42,7 @@ class _WelcomPageState extends State<WelcomPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          AppLargeText(text: 'Откройте для себя'),
+                          AppLargeText(text: 'Открой для себя'),
                           AppText(text: textApp[index], size: 30),
                           SizedBox(
                             height: 20,

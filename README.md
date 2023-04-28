@@ -1,4 +1,4 @@
-<h4 align="center">Все картинки для приложении сгенерированы с помощью <a href="https://lexica.art/" target="_blank">Lexica</a> 
+<h4 align="center">All pictures for the app are generated using <a href="https://lexica.art/" target="_blank">Lexica</a> 
 
 <img src="https://user-images.githubusercontent.com/91376345/233624533-34c83927-d2b2-4179-8819-8ab074b91229.png" /></h4>
 
@@ -6,7 +6,7 @@
 
 
 
-Иконки для приложения взяты  c <a href="https://www.flaticon.com/ru/" target="_blank">flaticon</a>
+Icons for the application are taken from  c <a href="https://www.flaticon.com/ru/" target="_blank">flaticon</a>
 
 
 <img src="https://user-images.githubusercontent.com/91376345/233866826-acbccc25-1474-453c-9c5f-8be74655103f.png" width="60" /></h4>

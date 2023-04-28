@@ -15,4 +15,4 @@
 <img src="https://user-images.githubusercontent.com/91376345/233866866-c2660cee-4e3a-429a-9f05-d8a68e3471e9.png" width="60" /></h4>
 
 
-3 
+"completed the detailed page; unified the buttons; next start describing navigation using cubit"

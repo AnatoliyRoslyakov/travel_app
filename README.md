@@ -16,3 +16,4 @@ Icons for the application are taken from  c <a href="https://www.flaticon.com/ru
 
 
 "completed the detailed page; unified the buttons; next start describing navigation using cubit"
+"the first step of navigating the app using cubit"

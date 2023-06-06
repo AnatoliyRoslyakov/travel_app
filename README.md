@@ -1,6 +1,12 @@
 <h4 align="center">All pictures for the app are generated using <a href="https://lexica.art/" target="_blank">Lexica</a></h4>
 
    <h4 align="center">This project is my little training of the layout of the application with the help of Layout Widgets</h4>
+   
+   <h3 align="center">Screens</h3> 
+
+<p align="center">
+  <img src="https://github.com/AnatoliyRoslyakov/travel_app/assets/91376345/b9b7cd19-f602-4e7f-9828-ae94cbfd3111.gif" alt="animated" />
+</p>
   
 <h4 align="center"><img src="https://user-images.githubusercontent.com/91376345/233624533-34c83927-d2b2-4179-8819-8ab074b91229.png" /></h4>
 

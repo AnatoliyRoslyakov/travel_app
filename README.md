@@ -1,6 +1,8 @@
-<h4 align="center">All pictures for the app are generated using <a href="https://lexica.art/" target="_blank">Lexica</a> 
+<h4 align="center">All pictures for the app are generated using <a href="https://lexica.art/" target="_blank">Lexica</a></h4>
 
-<img src="https://user-images.githubusercontent.com/91376345/233624533-34c83927-d2b2-4179-8819-8ab074b91229.png" /></h4>
+   <h4 align="center">This project is my little training of the layout of the application with the help of Layout Widgets</h4>
+  
+<h4 align="center"><img src="https://user-images.githubusercontent.com/91376345/233624533-34c83927-d2b2-4179-8819-8ab074b91229.png" /></h4>
 
 ***Prompt:*** *generate stylish minimalistic art of "CityName" with multiple layers getting progressively darker, depicting cityscape, architecture, greenery, and sky, using a single color palette to create depth and perspective, 1 color, 2d, minimalistic*
 

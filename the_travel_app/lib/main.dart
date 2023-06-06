@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:the_travel_app/cubit/app_cubit_logics.dart';
-import 'package:the_travel_app/cubit/app_cubits.dart';
-import 'pages/detail_page.dart';
-import 'pages/welcom_page.dart';
-import 'pages/navpages/main_page.dart';
+import 'package:go_router/go_router.dart';
+
+import 'package:the_travel_app/router/app_router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+final GoRouter router = AppRouter().router();
 
+class MyApp extends StatelessWidget {
+  final GlobalKey _appKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: BlocProvider<AppCubits>(
-          create: (context) => AppCubits(),
-          child: AppCubitLogics(),
-        ));
+    return MaterialApp.router(
+      key: _appKey,
+      routerConfig: router,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

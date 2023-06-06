@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:the_travel_app/pages/navpages/bar_item_page.dart';
 import 'package:the_travel_app/pages/home_page.dart';
 import 'package:the_travel_app/pages/navpages/my_page.dart';
@@ -15,10 +13,10 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    HomePage(),
-    BarItemPage(),
-    SearchPage(),
-    MyPage(),
+    const HomePage(),
+    const BarItemPage(),
+    const SearchPage(),
+    const MyPage(),
   ];
 
   int currentIndex = 0;
@@ -45,7 +43,7 @@ class _MainPageState extends State<MainPage> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 0,
-          items: [
+          items: const [
             BottomNavigationBarItem(label: 'Главная', icon: Icon(Icons.apps)),
             BottomNavigationBarItem(
                 label: 'Панель', icon: Icon(Icons.bar_chart_sharp)),

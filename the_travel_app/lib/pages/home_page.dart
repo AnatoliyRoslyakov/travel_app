@@ -1,8 +1,11 @@
+// ignore: depend_on_referenced_packages
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:the_travel_app/misc/colors.dart';
+import 'package:the_travel_app/router/routes.dart';
 import 'package:the_travel_app/widgets/app_text.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 import '../widgets/app_large_text.dart';
 
@@ -20,7 +23,7 @@ List moreInfoText = ["Афиша", "Экскурсии", "Отдых", "Похо
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    TabController _tabController =
+    TabController tabController =
         TabController(length: 3, vsync: this); // this -> context
     return Scaffold(
       body: Column(
@@ -31,10 +34,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               padding: const EdgeInsets.only(top: 70, left: 20),
               child: Row(
                 children: [
-                  Icon(Icons.menu, size: 30, color: Colors.black54),
+                  IconButton(
+                    icon:
+                        const Icon(Icons.menu, size: 30, color: Colors.black54),
+                    onPressed: () {
+                      context.go(Routes.welcom.path);
+                    },
+                  ),
                   Expanded(child: Container()),
                   Container(
-                    margin: EdgeInsets.only(right: 20),
+                    margin: const EdgeInsets.only(right: 20),
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
@@ -43,63 +52,66 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ),
                 ],
               )),
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
           // Путешествие
           Container(
-            margin: EdgeInsets.only(left: 20),
+            margin: const EdgeInsets.only(left: 20),
             child: AppLargeText(
               text: 'Откройте для себя',
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           // tabbar
-          Container(
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: TabBar(
-                  labelPadding: const EdgeInsets.only(left: 20, right: 20),
-                  labelColor: Colors.black,
-                  controller: _tabController,
-                  unselectedLabelColor: Colors.grey,
-                  isScrollable: true,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  indicator:
-                      CircleTabIndicator(color: AppColors.mainColor, radius: 4),
-                  tabs: [
-                    Tab(text: 'Места'),
-                    Tab(text: 'Вдохновение'),
-                    Tab(text: 'Эмоции'),
-                  ]),
-            ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TabBar(
+                labelPadding: const EdgeInsets.only(left: 20, right: 20),
+                labelColor: Colors.black,
+                controller: tabController,
+                unselectedLabelColor: Colors.grey,
+                isScrollable: true,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicator:
+                    CircleTabIndicator(color: AppColors.mainColor, radius: 4),
+                tabs: const <Widget>[
+                  Tab(text: 'Места'),
+                  Tab(text: 'Вдохновение'),
+                  Tab(text: 'Эмоции'),
+                ]),
           ),
           Container(
             padding: const EdgeInsets.only(left: 20),
             height: 300,
             width: double.maxFinite,
-            child: TabBarView(controller: _tabController, children: [
+            child: TabBarView(controller: tabController, children: [
               ListView.builder(
                 itemCount: mesto.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: const EdgeInsets.only(right: 15, top: 10),
-                    width: 200,
-                    height: 280,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                        image: DecorationImage(
-                            image: AssetImage('img/${mesto[index]}'),
-                            fit: BoxFit.cover)),
+                  return GestureDetector(
+                    onTap: () {
+                      context.push(Routes.detail.path);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 15, top: 10),
+                      width: 200,
+                      height: 280,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: AssetImage('img/${mesto[index]}'),
+                              fit: BoxFit.cover)),
+                    ),
                   );
                 },
               ),
-              Text('Тут'),
-              Text('Пока')
+              const Text('next 1'),
+              const Text('next 2')
             ]),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
             margin: const EdgeInsets.only(left: 20, right: 20),
             child: Row(
@@ -116,8 +128,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   )
                 ]),
           ),
-          SizedBox(height: 10),
-          Container(
+          const SizedBox(height: 30),
+          SizedBox(
               height: 119,
               width: double.infinity,
               child: CarouselSlider(
@@ -145,9 +157,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                             'img/${moreInfoImg[moreInfoText.indexOf(item)]}'),
                                         fit: BoxFit.cover)),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Container(
-                                margin: EdgeInsets.only(right: 10),
+                                margin: const EdgeInsets.only(right: 10),
                                 child: AppText(
                                   text: item,
                                   color: AppColors.textColor2,
@@ -169,12 +181,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
 class CircleTabIndicator extends Decoration {
   final Color color;
-  double radius;
+  final double radius;
 
-  CircleTabIndicator({required this.color, required this.radius});
+  const CircleTabIndicator({required this.color, required this.radius});
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
-    // TODO: implement createBoxPainter
     return _CirclePainter(color: color, radius: radius);
   }
 }
@@ -186,13 +197,13 @@ class _CirclePainter extends BoxPainter {
   _CirclePainter({required this.color, required this.radius});
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    Paint _paint = Paint();
-    _paint.color = color;
-    _paint.isAntiAlias = true;
+    Paint paint = Paint();
+    paint.color = color;
+    paint.isAntiAlias = true;
     final Offset circleOffset = Offset(
         configuration.size!.width / 2 - radius / 2,
         configuration.size!.height - radius);
 
-    canvas.drawCircle(offset + circleOffset, radius, _paint);
+    canvas.drawCircle(offset + circleOffset, radius, paint);
   }
 }

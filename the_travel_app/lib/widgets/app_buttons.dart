@@ -1,20 +1,17 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:the_travel_app/widgets/app_text.dart';
 
-import '../misc/colors.dart';
+import 'package:the_travel_app/widgets/app_text.dart';
 
 class AppButtons extends StatelessWidget {
   final Color color;
-  String? text;
-  IconData? icon;
-  double size;
-  bool? isIcon;
+  final String? text;
+  final IconData? icon;
+  final double size;
+  final bool? isIcon;
   final Color backgroundColor;
   final Color borderColor;
-  AppButtons({
+  const AppButtons({
     Key? key,
     required this.color,
     this.text = 'Hi',
@@ -49,6 +46,5 @@ class AppButtons extends StatelessWidget {
               ),
             ),
     );
-    ;
   }
 }

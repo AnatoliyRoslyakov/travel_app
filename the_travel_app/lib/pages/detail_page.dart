@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:the_travel_app/misc/colors.dart';
 import 'package:the_travel_app/widgets/app_large_text.dart';
 import 'package:the_travel_app/widgets/app_text.dart';
@@ -19,7 +20,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.maxFinite,
         height: double.maxFinite,
         child: Stack(
@@ -30,7 +31,7 @@ class _DetailPageState extends State<DetailPage> {
               child: Container(
                 width: double.maxFinite,
                 height: 360,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
                       'img/mesto1.jpg',
@@ -46,8 +47,10 @@ class _DetailPageState extends State<DetailPage> {
               child: Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(
+                    onPressed: () {
+                      context.pop();
+                    },
+                    icon: const Icon(
                       Icons.menu,
                       color: Colors.white,
                     ),
@@ -70,7 +73,7 @@ class _DetailPageState extends State<DetailPage> {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -79,7 +82,7 @@ class _DetailPageState extends State<DetailPage> {
                           color: Colors.black.withOpacity(0.8),
                         ),
                         AppLargeText(
-                          text: '\₽ 250',
+                          text: '₽ 250',
                           color: AppColors.mainColor,
                         )
                       ],
@@ -91,7 +94,7 @@ class _DetailPageState extends State<DetailPage> {
                           Icons.location_on,
                           color: AppColors.mainColor,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         AppText(
@@ -173,7 +176,7 @@ class _DetailPageState extends State<DetailPage> {
                         border: Border.all(
                             color: AppColors.textColor2.withOpacity(0.5)),
                         color: Colors.white,
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(15),
                         ),
                       ),
@@ -207,8 +210,9 @@ class _DetailPageState extends State<DetailPage> {
                       isIcon: true,
                       icon: Icons.favorite_border,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     ResponsiveButton(
+                      onTap: () {},
                       isResponsive: true,
                     )
                   ],

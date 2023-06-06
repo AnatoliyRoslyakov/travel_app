@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:go_router/go_router.dart';
 import 'package:the_travel_app/misc/colors.dart';
+import 'package:the_travel_app/router/routes.dart';
 import 'package:the_travel_app/widgets/app_large_text.dart';
 import 'package:the_travel_app/widgets/app_text.dart';
 import 'package:the_travel_app/widgets/responsive_button.dart';
@@ -32,7 +33,7 @@ class _WelcomPageState extends State<WelcomPage> {
               height: double.maxFinite,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('img/' + images[index]),
+                      image: AssetImage('img/${images[index]}'),
                       fit: BoxFit.fill)),
               child: Container(
                 margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
@@ -44,20 +45,23 @@ class _WelcomPageState extends State<WelcomPage> {
                         children: [
                           AppLargeText(text: 'Открой для себя'),
                           AppText(text: textApp[index], size: 30),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Container(
+                          SizedBox(
                             width: 270,
                             child: AppText(
                               text: text[index],
                               size: 15,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 40,
                           ),
                           ResponsiveButton(
+                            onTap: () {
+                              context.go(Routes.home.path);
+                            },
                             width: 120,
                           ),
                         ],
